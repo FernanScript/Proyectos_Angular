@@ -1,0 +1,13 @@
+.img{
+    width: 20rem;
+    height: 20em;
+    margin: 3rem;
+    background-color:white;
+    border-radius: 1rem;
+}
+
+p{
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}

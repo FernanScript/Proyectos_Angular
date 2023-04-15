@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <div class="">
+    <div class="text-center">
+      <button class="btn btn-success btn-lg" (click)="TirarDados()">Tirar dados</button>
+      <p class="mt-4">Si los dados salen igual ganas</p>
+    </div>
+    <div class="text-center">
+      <img class="img" [src]="dadosLeft">
+      <img class="img" [src]="dadosRight">
+      <h3 *ngIf="dadosLeft === dadosRight"><span class="badge bg-success">Ganaste!!!</span></h3>
+    </div>
+  </div>
+</div>
