@@ -1,0 +1,14 @@
+body{
+    background-image: url(./assets/imagenes/convertidor.png);
+    background-repeat: no-repeat;
+    background-size:45rem;
+    background-position: bottom;
+    height: 100vh;
+    background-color: rgb(234, 234, 234);
+}
+
+@media (max-width: 768px) {
+    body{
+        background-size: 25rem;
+    }
+}
