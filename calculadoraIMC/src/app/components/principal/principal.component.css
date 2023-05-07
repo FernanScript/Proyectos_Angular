@@ -1,0 +1,42 @@
+.fondoItem{
+    background-color: var(--morado);
+    height: 13rem;
+    border-radius: 2rem;
+    color: white;
+}
+
+.numStyle{
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-top: -2rem;
+}
+
+.cm{
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-left: -.5rem;
+}
+
+.form-range{
+    padding: 0 2rem;
+}
+
+input[type = range]::-webkit-slider-thumb{
+    background: var(--moradooscuro);
+}
+
+.sumaResta{
+    cursor: pointer;
+    background-color: #796ad1;
+    padding: 0.7rem;
+    border-radius: 5rem;
+    margin: 0 .2rem;
+}
+
+.styleContenedor{
+    cursor: pointer;
+}
+
+.sexoSelect{
+    background-color: #9f8eff;
+}

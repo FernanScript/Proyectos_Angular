@@ -1,0 +1,26 @@
+.fondoItem{
+    background-color: var(--morado);
+    height: 30rem;
+    border-radius: 2rem;
+    color: white;
+}
+
+.resultado{
+    color: var(--verde);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.styleNumber{
+    font-size: 8rem;
+    font-weight: bold;
+    padding-top: 2.5rem;
+    padding-bottom: 4.5rem;
+}
+
+.interpretacion{
+    margin: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
