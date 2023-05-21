@@ -6,19 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '01-bases';
-
-  theme = 'Curso Angular';
-  counter = 10;
-
-  BtnNumber(value : number) : void {
-    this.counter += value;
-  }
-
-  resetNumber() : void {
-    this.counter = 10;
-  }
-
-
+  title = 'Curso Angular';
 
 }

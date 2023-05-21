@@ -59,6 +59,7 @@ describe('Cart component', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     service = fixture.debugElement.injector.get(BookService);
+    spyOn(service, 'getBooksFromCart').and.callFake(()=>listBook);
   });
 
   it('should create', () => {
@@ -76,7 +77,13 @@ describe('Cart component', () => {
 
   it('onInputNumberChange increment correctly', () => {
     const action = 'plus';
-    const book = listBook[0];
+    const book = {
+      name : '',
+      author : '',
+      isbn : '',
+      price : 20,
+      amount : 2
+    };
 
     const spy1 = spyOn(service, 'updateAmountBook').and.callFake (()=> null);
     const spy2 = spyOn(component,'getTotalPrice').and.callFake (()=> null);
@@ -94,7 +101,13 @@ describe('Cart component', () => {
 
   it('onInputNumberChange decrement correctly', () => {
     const action = 'minus';
-    const book = listBook[0];
+    const book = {
+      name : '',
+      author : '',
+      isbn : '',
+      price : 20,
+      amount : 3
+    };
 
     const spy1 = spyOn(service, 'updateAmountBook').and.callFake (()=> null);
     const spy2 = spyOn(component,'getTotalPrice').and.callFake (()=> null);
@@ -109,4 +122,31 @@ describe('Cart component', () => {
     expect(spy2).toHaveBeenCalled();
 
   });
+
+  it('onClearBooks work correctly', () => {
+    const spy1 = spyOn((component as any), '_clearListCartBook').and.callThrough();
+    const spy2 = spyOn(service, 'removeBooksFromCart').and.callFake(()=>null);
+    component.listCartBook = listBook;
+
+    component.onClearBooks();
+
+    expect(component.listCartBook.length).toBe(0);
+    expect(spy1).toHaveBeenCalled();
+    expect(spy2).toHaveBeenCalled();
+  });
+
+  it('_clearListCartBook work correctly', () => {
+    const spy1 = spyOn(service, 'removeBooksFromCart').and.callFake(()=>null);
+    component.listCartBook = listBook;
+
+    component["_clearListCartBook"]();
+
+    expect(component.listCartBook.length).toBe(0);
+    expect(spy1).toHaveBeenCalled();
+  });
+
+  // ngOnInit(): void {
+  //   this.listCartBook = this._bookService.getBooksFromCart();
+  //   this.totalPrice = this.getTotalPrice(this.listCartBook);
+  // }
 });
