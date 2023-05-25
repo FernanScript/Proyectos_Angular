@@ -2,7 +2,7 @@ import { CartComponent } from "./cart.component";
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BookService } from "src/app/services/book.service";
-import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, inject } from "@angular/core";
 import { Book } from "src/app/models/book.model";
 
 const listBook : Book[] = [
@@ -41,7 +41,7 @@ describe('Cart component', () => {
         HttpClientTestingModule  // modulos necesarios
       ],
       declarations : [
-        CartComponent  // componentes necesarios
+        // CartComponent  // componentes necesarios
       ],
       providers : [
         BookService // servicios necesarios

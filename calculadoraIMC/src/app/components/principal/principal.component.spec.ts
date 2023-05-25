@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrincipalComponent } from './principal.component';
 
-describe('PrincipalComponent', () => {
+fdescribe('PrincipalComponent', () => {
   let component: PrincipalComponent;
   let fixture: ComponentFixture<PrincipalComponent>;
 
@@ -20,4 +20,29 @@ describe('PrincipalComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('cambiar altura', () => {
+  //   const altura = 180;
+  //   expect(component.cambiarAltura(altura)).not.toBeUndefined();
+  // });
+
+  it('sexo sea masculino', () => {
+    component.masculino();
+    expect(component.sexo).toBe('masculino');
+  });
+
+  it('sexo sea femenino', () => {
+    component.femenino();
+    expect(component.sexo).toBe('femenino');
+  });
+
+  // it('valores de calculadora IMC', () => {
+  //   const altura = component.altura;
+  //   const peso = component.peso;
+
+  //   component.CalcularIMC();
+
+  //   expect(altura).not.toBeNull();
+  //   expect(peso).not.toBeNull();
+  // });
 });

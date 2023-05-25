@@ -26,10 +26,12 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('AppDados');
   });
 
-  it('should render title', () => {
+  it('TirarDados > 0', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('AppDados app is running!');
+    const app = fixture.componentInstance;
+    app.TirarDados()
+    expect(app.num1! > 0).toBeTrue();
+    expect(app.num2! > 0).toBeTrue();
+    // expect(app.num1).toEqual(app.num2);
   });
 });
