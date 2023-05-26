@@ -4,6 +4,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BookService } from "src/app/services/book.service";
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, inject } from "@angular/core";
 import { Book } from "src/app/models/book.model";
+import { MatDialog } from '@angular/material/dialog';
+import { of } from "rxjs";
 
 const listBook : Book[] = [
   {
@@ -29,6 +31,14 @@ const listBook : Book[] = [
   },
 ]
 
+const matDialogMock = {
+  open() {
+    return {
+      afterClosed: () => of(true)
+    };
+  }
+};
+
 describe('Cart component', () => {
 
   let component : CartComponent;
@@ -44,7 +54,10 @@ describe('Cart component', () => {
         // CartComponent  // componentes necesarios
       ],
       providers : [
-        BookService // servicios necesarios
+        BookService, // servicios necesarios
+        {
+          provide : MatDialog, useValue: matDialogMock
+        }
       ],
       schemas : [
         CUSTOM_ELEMENTS_SCHEMA,

@@ -9,7 +9,7 @@ const routerMock = {
   navigate() {}
 }
 
-fdescribe('Nav Component', () => {
+describe('Nav Component', () => {
   let component : NavComponent;
   let fixture : ComponentFixture<NavComponent>;
 
