@@ -1,0 +1,22 @@
+<div class="fondo-table mt-4">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Salario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personas of listPersonas; let i = index">
+        <td>{{ personas.id }}</td>
+        <td>{{ personas.nombre }}</td>
+        <td>{{ personas.apellido }}</td>
+        <td>{{ personas.sexo }}</td>
+        <td>{{ personas.salario | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
