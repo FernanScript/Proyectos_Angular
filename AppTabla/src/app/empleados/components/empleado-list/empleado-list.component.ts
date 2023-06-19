@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Personas } from 'src/app/interface/personas';
+import { Component } from '@angular/core';
+import { Personas } from 'src/app/empleados/interface/personas';
+import { personasService } from '../../services/personas.service';
 
 @Component({
   selector: 'empleado-list',
@@ -8,51 +9,18 @@ import { Personas } from 'src/app/interface/personas';
 })
 export class EmpleadoListComponent {
 
+  radioSelect = 'todos';
+
   index = 1;
 
-  @Input()
-  listPersonas : Personas[] = [
-    {
-      id : this.index++,
-      nombre : 'Fernando',
-      apellido : 'Trejos',
-      sexo : 'Masculino',
-      salario : 12000
-    },
-    {
-      id : this.index++,
-      nombre : 'Alexandra',
-      apellido : 'Escobar',
-      sexo : 'Femenino',
-      salario : 10000
-    },
-    {
-      id : this.index++,
-      nombre : 'Jose',
-      apellido : 'Sandoval',
-      sexo : 'Masculino',
-      salario : 9000
-    },
-    {
-      id : this.index++,
-      nombre : 'Arturo',
-      apellido : 'Vazquez',
-      sexo : 'Masculino',
-      salario : 9000
-    },
-    {
-      id : this.index++,
-      nombre : 'Monica',
-      apellido : 'Aguilar',
-      sexo : 'Femenino',
-      salario : 11000
-    }
-  ];
+  constructor( private peopleService : personasService ) {}
 
-  // @Output()
-  // emitirSexo : EventEmitter<string> = new EventEmitter();
+  get listPersonas():Personas[] {
+    return this.peopleService.getAllPersonas();
+  }
 
-  // emitirMensaje(sexo : string) {
-  //   this.emitirSexo.emit(sexo);
-  // }
+  changeType(radio:string):void {
+    this.radioSelect = radio;
+  }
+
 }

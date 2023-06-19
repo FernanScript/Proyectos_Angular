@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { personasService } from './services/personas.service';
-import { Personas } from './interface/personas';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +7,5 @@ import { Personas } from './interface/personas';
 })
 export class AppComponent {
   title = 'AppTabla';
-
-  constructor ( private personasService:personasService ) {}
-
 
 }

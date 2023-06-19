@@ -1,3 +1,4 @@
+<count-empleados (radioChange)="changeType($event)"></count-empleados>
 <div class="fondo-table mt-4">
   <table class="table">
     <thead>
@@ -10,13 +11,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let personas of listPersonas; let i = index">
-        <td>{{ personas.id }}</td>
-        <td>{{ personas.nombre }}</td>
-        <td>{{ personas.apellido }}</td>
-        <td>{{ personas.sexo }}</td>
-        <td>{{ personas.salario | number }}</td>
-      </tr>
+      <ng-container *ngFor="let personas of listPersonas; let i = index">
+        <tr *ngIf="radioSelect == 'todos' || radioSelect == personas.sexo || radioSelect == personas.sexo">
+          <td>{{ personas.id }}</td>
+          <td>{{ personas.nombre }}</td>
+          <td>{{ personas.apellido }}</td>
+          <td>{{ personas.sexo }}</td>
+          <td>{{ personas.salario | number }}</td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 </div>

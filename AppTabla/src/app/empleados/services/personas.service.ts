@@ -8,7 +8,7 @@ export class personasService {
 
   constructor() { }
 
-  listPersonas : Personas[] = [
+  private listPersonas : Personas[] = [
     {
       id : this.index++,
       nombre : 'Fernando',

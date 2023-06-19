@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Personas } from 'src/app/interface/personas';
-import { personasService } from 'src/app/services/personas.service';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Personas } from 'src/app/empleados/interface/personas';
+import { personasService } from 'src/app/empleados/services/personas.service';
 
 @Component({
   selector: 'count-empleados',
@@ -8,6 +8,11 @@ import { personasService } from 'src/app/services/personas.service';
   styleUrls: ['./count-empleados.component.css']
 })
 export class CountEmpleadosComponent {
+
+  radioSelect = 'todos';
+
+  @Output()
+  radioChange = new EventEmitter<string>();
 
   constructor( private personaService : personasService ) {}
 
@@ -21,6 +26,10 @@ export class CountEmpleadosComponent {
 
   get sexoPersonaM():Personas[] {
     return this.personaService.getMasculino();
+  }
+
+  changeRadioButton(): void {
+    this.radioChange.emit(this.radioSelect);
   }
 
 }
