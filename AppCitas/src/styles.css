@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+h1 {
+  color: white;
+}
+
+.flex-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.b-content {
+  background-color: rgb(246, 244, 255);
+}
+
+body {
+  background-image: url(assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-form {
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.btn-form {
+  font-weight: 500;
+}
+
+label, span {
+  font-weight: bold;
+}

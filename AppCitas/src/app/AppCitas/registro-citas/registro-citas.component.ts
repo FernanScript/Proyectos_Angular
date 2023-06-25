@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-registro-citas',
+  selector: 'registro-citas',
   templateUrl: './registro-citas.component.html',
   styleUrls: ['./registro-citas.component.css']
 })
