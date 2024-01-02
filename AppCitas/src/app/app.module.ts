@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormCitasComponent } from './AppCitas/form-citas/form-citas.component';
 import { RegistroCitasComponent } from './AppCitas/registro-citas/registro-citas.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { RegistroCitasComponent } from './AppCitas/registro-citas/registro-citas
     RegistroCitasComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

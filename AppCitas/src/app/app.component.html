@@ -1,6 +1,11 @@
 <div class="mt-5">
   <h1 class="text-center">Aplicación de citas</h1>
-  <div class="mt-5">
-    <form-citas></form-citas>
+  <div class="mt-5 flex-content">
+    <div class="col-6 b-content container-form">
+      <form-citas (submitCita)="addCita($event)"></form-citas>
+    </div>
+    <div class="col-5">
+      <registro-citas></registro-citas>
+    </div>
   </div>
 </div>

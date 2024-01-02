@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AppCitas';
+  listCitas:any[] = [];
+
+  public addCita(cita:[]) {
+    console.log('soy el padre');
+    console.log(cita);
+    this.listCitas.push(cita);
+  }
 }
