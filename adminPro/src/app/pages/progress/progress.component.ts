@@ -6,28 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './progress.component.scss'
 })
 export class ProgressComponent {
-  public percentage = 50;
+  public percentage1 = 25;
+  public percentage2 = 50;
 
-  public operation(sign: string): void {
-    switch (sign) {
-      case '-':
-        if (this.percentage === 0) {
-          return;
-        } else {
-          this.percentage--;
-        }
-        break;
+  get getPercentage1(): string {
+    return `${this.percentage1}%`;
+  }
 
-      case '+':
-        if (this.percentage === 100) {
-          return;
-        } else {
-          this.percentage++;
-        }
-        break;
-
-      default:
-        break;
-    }
+  get getPercentage2(): string {
+    return `${this.percentage2}%`;
   }
 }

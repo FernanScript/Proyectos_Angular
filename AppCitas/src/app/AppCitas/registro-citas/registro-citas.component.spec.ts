@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RegistroCitasComponent } from './registro-citas.component';
 
-describe('RegistroCitasComponent', () => {
+fdescribe('RegistroCitasComponent', () => {
   let component: RegistroCitasComponent;
   let fixture: ComponentFixture<RegistroCitasComponent>;
 

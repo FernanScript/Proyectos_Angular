@@ -3,16 +3,26 @@
     <div class="card">
       <div class="card-body">
         <!-- This is some text within a card block. -->
-        <h4 class="card-title">Different bar sizes </h4>
+        <h4 class="card-title">Different bar sizes</h4>
         <div class="progress m-t-20">
           <div
-            class="progress-bar bg-info"
+            class="progress-bar bg-success progress-bar-striped"
             [ngStyle]="{
-              'width': percentage + '%',
+              'width': getPercentage1,
               'height': '15px'
             }"
             role="progressbar"
-          >{{ percentage }}%</div>
+            ></div>
+        </div>
+        <div class="progress m-t-20">
+          <div
+            class="progress-bar bg-info progress-bar-striped"
+            [ngStyle]="{
+              'width': getPercentage2,
+              'height': '15px'
+            }"
+            role="progressbar"
+            ></div>
         </div>
       </div>
     </div>
@@ -23,19 +33,7 @@
   <div class="col-6">
     <div class="card">
       <div class="card-body">
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button (click)="operation('-')" class="btn btn-primary" type="button">
-              <i class="fa fa-minus"></i>
-            </button>
-          </span>
-          <input [(ngModel)]="percentage" type="text" class="form-control txt-center" placeholder="Product name">
-          <span class="input-group-btn">
-            <button (click)="operation('+')" class="btn btn-primary" type="button">
-              <i class="fa fa-plus"></i>
-            </button>
-          </span>
-        </div>
+        <app-increment [value]="percentage1" (value)="percentage1 = $event"></app-increment>
       </div>
     </div>
   </div>
@@ -43,7 +41,7 @@
   <div class="col-6">
     <div class="card">
       <div class="card-body">
-        2
+        <app-increment [value]="percentage2" (value)="percentage2 = $event" [btnClass]="'btn-info'"></app-increment>
       </div>
     </div>
   </div>
